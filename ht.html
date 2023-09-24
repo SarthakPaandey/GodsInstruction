@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bhagavad Gita Verse</title>
+    <style>
+        /* Add CSS styles for the background video and Sanskrit font */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin to fill the entire viewport */
+            overflow: hidden; /* Prevent scrolling when video is in full screen */
+        }
+        /* Style the video to cover the entire viewport */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Place it behind other content */
+        }
+
+        /* Add additional CSS styles as needed */
+        /* Center content vertically and horizontally */
+        #content-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.7); /* Background color for content container */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1; /* Place it in front of the video */
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- Background audio element with autoplay and loop attributes -->
+    <audio autoplay loop id="bg-audio">
+        <!-- Source for the background audio -->
+        <source src="https://rr2---sn-5jucgv5qc5oq-cagr.googlevideo.com/videoplayback?expire=1695583584&ei=ADkQZdLgHcWG8wSltbDICQ&ip=143.137.164.93&id=o-AEcpVVzNEKLa9gQoCkuLXFfYdkWQvT4BYogbw6UeirUd&itag=251&source=youtube&requiressl=yes&spc=UWF9f-Q2Kc30zXHjRBMwj9JHRrh1Fo8&vprv=1&svpuc=1&mime=audio%2Fwebm&gir=yes&clen=32023646&dur=1854.061&lmt=1693661261954429&keepalive=yes&fexp=24007246,24350018&beids=24350018&c=ANDROID&txp=4532434&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAOQiiz5X5noGlus4HHPlnTmXlbbI_AzTCfUi-CPYWGDGAiBxZnkk926duV1qif5BgHQvYrbHBqRnKwXClklSetttQQ%3D%3D&redirect_counter=1&rm=sn-ab5ee67l&req_id=28523fd4db23a3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=dz&mip=106.51.13.146&mm=31&mn=sn-5jucgv5qc5oq-cagr&ms=au&mt=1695569602&mv=m&mvi=2&pl=21&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhALRdlckdzki330V1UdsvVQ40lXFnMtBDgI__E0YIjegjAiBwrTZMliE6RApUXybKUJbI_uqSv0vaojJcMEU0vrBVRw%3D%3D" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Video element with loop attribute for continuous playback -->
+    <video autoplay loop muted id="bg-video">
+        <source src="https://download-video.akamaized.net/v2-1/playback/67d1ee15-7bb4-4056-8bb2-be28357798c6/dee5c7b4-333d77fe?__token__=st=1695563184~exp=1695577584~acl=%2Fv2-1%2Fplayback%2F67d1ee15-7bb4-4056-8bb2-be28357798c6%2Fdee5c7b4-333d77fe%2A~hmac=b3279cb5993f2d4218e6f3d55e6055a974f706bd5d802ef02bc3771ea30e0fff&r=dXMtZWFzdDE%3D" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="content-container">
+        <h1>ॐ</h1>
+        <h2> ||Bhagavad Gita Verse||</h2>
+        <div id="verse-container">
+            <p id="verse-text">Verse Text</p>
+            <p id="verse-meaning">Verse Meaning</p>
+            <audio id="audio-1" controls>
+                <!-- Source for the first audio file for the verse -->
+                <source src="" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+            <audio id="audio-2" controls>
+                <!-- Source for the second audio file for the verse -->
+                <source src="" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+        </div>
+        <button onclick="loadRandomVerse()">Get God's Instructions</button>
+    </div>
+
+    <script>
+        // Bhagavad Gita data with verses, meanings, and audio filenames
+        const bhagavadGitaData = [
+            {
+                text: "dehino’sminyathā dehe kaumāraṃ yauvanaṃ jarā। tathā dehāntaraprāptirdhīrastatra na muhyati॥ 2-13",
+                meaning: "Just as the boyhood, youth and old age come to the embodied Soul in this body, in the same manner, is the attaining of another body; the wise man is not deluded at that.",
+                audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-13.mp3", "https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-13.mp3"] 
+            },    {  text: "ya enaṃ vetti hantāraṃ yaścainaṃ manyate hatam। ubhau tau na vijānīto nāyaṃ hanti na hanyate॥ 2-19",
+                meaning: "He who thinks that the soul kills, and he who thinks of it as killed, are both ignorant. The soul kills not, nor is it killed.",
+                audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-19.mp3", "https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-19.mp3"]
+            },
+            {text: "na jāyate mriyate vā kadācin nāyaṃ bhūtvā bhavitā vā na bhūyaḥ। ajo nityaḥ śāśvato’yaṃ purāṇona hanyate hanyamāne śarīre॥ 2-20", 
+            meaning: "The soul is never born, it never dies having come into being once, it never ceases to be.Unborn, eternal, abiding and primeval, it is not slain when the body is slain.",
+            audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-20.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-20.mp3"]
+             },
+             {text: "vāsāṃsi jīrṇāni yathā vihāya navāni gṛhṇāti naro’parāṇi। tathā śarīrāṇi vihāya jīrṇā-|yanyāni saṃyāti navāni dehī॥ 2-22",
+             meaning: "As a man casts off worn-out garments and puts on others that are new,so does the soul cast off its worn-out bodies and enter into others that are new.",
+             audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-22.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-22.mp3"]},
+              {
+                  text: "karmaṇyevādhikāraste mā phaleṣu kadācana। mā karmaphalaheturbhūrmā te saṅgo’stvakarmaṇi॥ 2-47",
+                  meaning: "To work alone you have the right, and not to the fruits. Do not be impelled by the fruits of work.Nor have attachment to inaction.",
+                  audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-46.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-46.mp3"]
+              },
+              {
+                  text: "yogasthaḥ kuru karmāṇi saṅgaṃ tyaktvā dhanañjaya।siddhyasiddhyoḥ samo bhūtvā samatvaṃ yoga ucyate॥ 2-48",
+                  meaning: "By being established in Yoga, O Dhananjaya, undertake actions, casting off attachment and remaining equipoised in success and failure. Equanimity is called Yoga.", 
+            audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-47.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-47.mp3"]},
+            {
+                  text: "buddhiyukto jahātīha ubhe sukṛtaduṣkṛte। tasmādyogāya yujyasva yogaḥ karmasu kauśalam॥ 2-50",
+             meaning: "Endowed with equanimity, one sheds in this life both good and evil. Therefore, strive for the practice of this Yoga of equanimity. Skill in action lies (in the practice of) this Yoga.",
+              audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-49.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-49.mp3"]},
+              {text: "krodhādbhavati sammohaḥ sammohātsmṛtivibhramaḥ। smṛtibhraṃśād buddhināśo buddhināśātpraṇaśyati॥ 2-63",
+              meaning: "From anger there comes delusion; from delusion, the loss of memory; from the loss of memory, the destruction of discrimination; and with the destruction of discrimination, he is lost.",
+              audios: ["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-62.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-62.mp3"]},
+              {
+                  text:"āpūryamāṇamacalapratiṣṭhaṃ samudramāpaḥ praviśanti yadvat। tadvatkāmā yaṃ praviśanti sarve sa śāntimāpnoti na kāmakāmī॥ 2-70",
+               meaning:"Just as the ocean remains undisturbed by the incessant flow of waters from rivers merging into it, likewise the sage who is unmoved despite the flow of desirable objects all around him attains peace, and not the person who strives to satisfy desires.",
+               audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/02-69.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/02-69.mp3"]},
+               {
+                   text:"tasmādasaktaḥ satataṃ kāryaṃ karma samācara। asakto hyācarankarma paramāpnoti pūruṣaḥ॥ 3-19",
+              meaning:"Go on efficiently doing your duty at all times without attachment. Doing work without attachment man attains the Supreme.",
+              audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/03-19.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/03-19.mp3"] },
+              {
+                  text:"ye hi saṁsparśa-jā bhogā duḥkha-yonaya eva te। ādy-antavantaḥ kaunteya na teṣu ramate budhaḥ॥ 5-22",
+                  meaning:"An intelligent person does not take part in the sources of misery, which are due to contact with the material senses. O son of Kuntī, such pleasures have a beginning and an end, and so the wise man does not delight in them.",
+                  audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/05-21.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/05-21.mp3"]     },
+                  {
+                      text:"uddharedātmanātmānaṃ nātmānamavasādayet। ātmaiva hyātmano bandhurātmaiva ripurātmanaḥ॥"
+                    , meaning:"Elevate yourself through your own efforts, and not degrade yourself. For, the mind can be the friend and also the enemy of the self.",
+                    audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/06-05.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/06-05.mp3"]
+
+                  },
+                  {
+                      text:"yuktāhāravihārasya yuktaceṣṭasya karmasu। yuktasvapnāvabodhasya yogo bhavati du:khahā॥",
+                      meaning:"Those who are disciplined in eating and recreation, balanced in work, and regulated in sleep, can mitigate all sorrows by practicing Yoga.",
+                      audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/06-15.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/06-15.mp3"]
+                  },
+                  {
+                      text:"asaṃśayaṃ mahābāho mano durnigrahaṃ calam । abhyāsena tu kaunteya vairāgyeṇa ca gṛhyate ॥",
+                      meaning:"O mighty-armed son of Kunti, it is undoubtedly tough to curb the restless mind, but it is possible by constant practice and by detachment.",
+                      audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/06-30.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/06-30.mp3"]
+                  },
+                  {
+                      text:"śrībhagavānuvāca kālo'smi lokakṣayakṛtpravṛddho lokānsamāhartumiha pravṛtta:। ‍ṛte'pi tvāṃ na bhaviṣyanti sarve ye'vasthitā: pratyanīkeṣu yodhā:॥,",
+                      meaning:"The Supreme Lord said: I am mighty Time, the source of destruction that comes forth to annihilate the worlds. Even without your participation, the warriors arrayed in the opposing army shall cease to exist.",
+                      audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/11-30.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/11-30.mp3"]
+},
+{
+    text:"satvaṃ sukhe sañjayati raja: karmaṇi bhārata। jñānamāvṛtya tu tama: pramāde sañjayatyuta॥",
+    meaning:"Lust, anger and greed, these are the three doors to self-destructive hell. Thus, one should avoid these.",
+    audios:["https://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/16-16.mp3","https://www.bhagavad-gita.org/AudioArchive/Gita/English/verses/16-16.mp3"]},
+
+            
+];
+
+        function loadRandomVerse() {
+            const randomIndex = Math.floor(Math.random() * bhagavadGitaData.length);
+            const randomVerse = bhagavadGitaData[randomIndex];
+
+            document.getElementById("verse-text").textContent = randomVerse.text;
+            document.getElementById("verse-meaning").textContent = `Meaning: ${randomVerse.meaning}`;
+
+            // Update the audio sources to play the selected verse's audio files
+            for (let i = 0; i < randomVerse.audios.length; i++) {
+                const audioElement = document.getElementById(`audio-${i + 1}`);
+                audioElement.src = randomVerse.audios[i];
+                audioElement.load(); // Load the new audio source
+            }
+        }
+
+        // After defining the background audio element
+        const bgAudio = document.getElementById("bg-audio");
+        bgAudio.volume = 0.3; // Set the volume to 0.5 (half volume)
+    </script>
+</body>
+</html>
